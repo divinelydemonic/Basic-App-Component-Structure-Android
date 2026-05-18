@@ -5,31 +5,32 @@ import kr.android.appstructuretemplate.R
 
 sealed class Screens(
     val title : String,
-    val route : String
+    val route : String,
+    @DrawableRes val icon : Int
 ) {
 
     sealed class AppDrawer(
         val dTitle : String,
         val dRoute : String,
-        @DrawableRes val icon : Int
-    ) : Screens(dTitle, dRoute) {
+        @DrawableRes val dIcon : Int
+    ) : Screens(dTitle, dRoute, dIcon) {
 
         object DrawerItem1 : AppDrawer(
             dTitle = "Drawer Item 1",
             dRoute = "drawerItem1",
-            icon = R.drawable.item_1
+            dIcon = R.drawable.item_1
         )
 
         object DrawerItem2 : AppDrawer(
             dTitle = "Drawer Item 2",
             dRoute = "drawerItem2",
-            icon = R.drawable.item_2
+            dIcon = R.drawable.item_2
         )
 
         object DrawerItem3 : AppDrawer(
             dTitle = "Drawer Item 3",
             dRoute = "drawerItem3",
-            icon = R.drawable.item_3
+            dIcon = R.drawable.item_3
         )
 
     }
@@ -37,25 +38,25 @@ sealed class Screens(
     sealed class BottomBar(
         val bTitle : String,
         val bRoute : String,
-        @DrawableRes val icon : Int
-    ) : Screens(bTitle, bRoute) {
+        @DrawableRes val bIcon : Int
+    ) : Screens(bTitle, bRoute, bIcon) {
 
         object BBItem1 : BottomBar(
             bTitle = "BB Item 1",
             bRoute = "bBItem1",
-            icon = R.drawable.bb_item1
+            bIcon = R.drawable.bb_item1
         )
 
         object BBItem2 : BottomBar(
             bTitle = "BB Item 2",
             bRoute = "bBItem2",
-            icon = R.drawable.bb_item2
+            bIcon = R.drawable.bb_item2
         )
 
         object BBItem3 : BottomBar(
             bTitle = "BB Item 3",
             bRoute = "bBItem3",
-            icon = R.drawable.bb_item3
+            bIcon = R.drawable.bb_item3
         )
 
     }
@@ -63,25 +64,25 @@ sealed class Screens(
     sealed class BottomSheet(
         val bsTitle : String,
         val bsRoute : String,
-        @DrawableRes val icon : Int
-    ) : Screens(bsTitle, bsRoute) {
+        @DrawableRes val bBIcon : Int
+    ) : Screens(bsTitle, bsRoute, bBIcon) {
 
         object BSItem1 : BottomSheet(
             bsTitle = "BS Item 1",
             bsRoute = "bSItem1",
-            icon = R.drawable.item_1
+            bBIcon = R.drawable.item_1
         )
 
         object BSItem2 : BottomSheet(
             bsTitle = "BS Item 2",
             bsRoute = "bSItem2",
-            icon = R.drawable.item_2
+            bBIcon = R.drawable.item_2
         )
 
         object BSItem3 : BottomSheet(
             bsTitle = "BS Item 3",
             bsRoute = "bSItem3",
-            icon = R.drawable.item_3
+            bBIcon = R.drawable.item_3
         )
 
     }
@@ -102,6 +103,21 @@ val bottomBarItems = listOf(
 )
 
 val bottomSheetItems = listOf(
+    Screens.BottomSheet.BSItem1,
+    Screens.BottomSheet.BSItem2,
+    Screens.BottomSheet.BSItem3
+)
+
+val allScreens = listOf(
+
+    Screens.BottomBar.BBItem1,
+    Screens.BottomBar.BBItem2,
+    Screens.BottomBar.BBItem3,
+
+    Screens.AppDrawer.DrawerItem1,
+    Screens.AppDrawer.DrawerItem2,
+    Screens.AppDrawer.DrawerItem3,
+
     Screens.BottomSheet.BSItem1,
     Screens.BottomSheet.BSItem2,
     Screens.BottomSheet.BSItem3

@@ -44,70 +44,74 @@ fun BottomSheet(
         }
     ) {
 
-        Text(
-            text = "More Options",
-            fontSize = 25.sp,
-            fontWeight = FontWeight.Bold,
-            textAlign = TextAlign.Center,
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp)
-        )
-
-        Spacer(Modifier.height(8.dp))
-
-        bottomSheetItems.forEachIndexed { index, item ->
-
-            ListItem(
-                leadingContent = {
-                    Icon(
-                        painter = painterResource(item.icon),
-                        contentDescription = item.title,
-                        modifier = Modifier
-                            .size(30.dp)
-                    )
-                },
-                headlineContent = { Text(item.title, fontSize = 25.sp, fontWeight = FontWeight.SemiBold) },
-                colors = ListItemDefaults.colors(
-                    containerColor = if (
-                        currentRoute == item.route
-                    ) {
-                        MaterialTheme.colorScheme.primary
-                    } else {
-                        Color.Transparent
-                    },
-                    headlineColor = if (
-                        currentRoute == item.route
-                    ) {
-                        MaterialTheme.colorScheme.onPrimary
-                    } else {
-                        MaterialTheme.colorScheme.onSurfaceVariant
-                    },
-                    leadingIconColor = if (
-                        currentRoute == item.route
-                    ) {
-                        MaterialTheme.colorScheme.onPrimary
-                    } else {
-                        MaterialTheme.colorScheme.onSurfaceVariant
-                    },
-                ),
+        Column(
+            modifier = Modifier.fillMaxHeight(0.35f)
+        ){
+            Text(
+                text = "More Options",
+                fontSize = 25.sp,
+                fontWeight = FontWeight.Bold,
+                textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .padding(horizontal = 16.dp, vertical = 4.dp)
-                    .clip(RoundedCornerShape(16.dp))
-                    .clickable{ onItemSelected(item.route) }
+                    .fillMaxWidth()
+                    .padding(16.dp)
             )
 
-            if (index != bottomSheetItems.lastIndex) {
-                HorizontalDivider(
-                    modifier = Modifier.padding(horizontal = 16.dp),
-                    thickness = 1.dp,
-                    color = MaterialTheme.colorScheme.outlineVariant
+            Spacer(Modifier.height(8.dp))
+
+            bottomSheetItems.forEachIndexed { index, item ->
+
+                ListItem(
+                    leadingContent = {
+                        Icon(
+                            painter = painterResource(item.bBIcon),
+                            contentDescription = item.title,
+                            modifier = Modifier
+                                .size(30.dp)
+                        )
+                    },
+                    headlineContent = { Text(item.title, fontSize = 25.sp, fontWeight = FontWeight.SemiBold) },
+                    colors = ListItemDefaults.colors(
+                        containerColor = if (
+                            currentRoute == item.route
+                        ) {
+                            MaterialTheme.colorScheme.primary
+                        } else {
+                            Color.Transparent
+                        },
+                        headlineColor = if (
+                            currentRoute == item.route
+                        ) {
+                            MaterialTheme.colorScheme.onPrimary
+                        } else {
+                            MaterialTheme.colorScheme.onSurfaceVariant
+                        },
+                        leadingIconColor = if (
+                            currentRoute == item.route
+                        ) {
+                            MaterialTheme.colorScheme.onPrimary
+                        } else {
+                            MaterialTheme.colorScheme.onSurfaceVariant
+                        },
+                    ),
+                    modifier = Modifier
+                        .padding(horizontal = 16.dp, vertical = 4.dp)
+                        .clip(RoundedCornerShape(16.dp))
+                        .clickable { onItemSelected(item.route) }
                 )
+
+                if (index != bottomSheetItems.lastIndex) {
+                    HorizontalDivider(
+                        modifier = Modifier.padding(horizontal = 16.dp),
+                        thickness = 1.dp,
+                        color = MaterialTheme.colorScheme.outlineVariant
+                    )
+                }
+
             }
 
+            Spacer(Modifier.height(24.dp))
         }
-
-        Spacer(Modifier.height(24.dp))
 
     }
 

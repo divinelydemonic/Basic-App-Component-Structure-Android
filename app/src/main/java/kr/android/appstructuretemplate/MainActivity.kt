@@ -19,7 +19,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            val viewModel : ViewModel = viewModel()
             val navController = rememberNavController()
 
             AppStructureTemplateTheme {

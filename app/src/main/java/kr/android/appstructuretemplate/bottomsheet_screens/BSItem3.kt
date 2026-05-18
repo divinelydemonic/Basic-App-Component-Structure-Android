@@ -31,7 +31,7 @@ fun BSItem3(
             Text(
                 text = "Bottom Sheet Item 3",
                 color = MaterialTheme.colorScheme.secondary,
-                fontSize = 45.sp,
+                fontSize = 40.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.rotate(-45f)
             )

@@ -1,9 +1,12 @@
 package kr.android.appstructuretemplate.components
 
+import android.util.Log.d
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -21,10 +24,10 @@ fun AppDrawer(
 ){
 
     ModalDrawerSheet(
+        modifier = Modifier.fillMaxWidth(0.7f),
         drawerShape = RoundedCornerShape(topEnd = 16.dp, bottomEnd = 16.dp),
         drawerContainerColor = MaterialTheme.colorScheme.primaryContainer,
-        drawerContentColor = MaterialTheme.colorScheme.onSurface,
-        windowInsets = DrawerDefaults.windowInsets
+        drawerContentColor = MaterialTheme.colorScheme.onSurface
     ) {
 
         Text(
@@ -44,7 +47,7 @@ fun AppDrawer(
                 label = { Text(item.title, fontWeight = FontWeight.SemiBold, fontSize = 20.sp) },
                 icon = {
                     Icon(
-                        painter = painterResource(item.icon),
+                        painter = painterResource(item.dIcon),
                         contentDescription = item.title,
                         modifier = Modifier.size(30.dp)
                     )
@@ -55,7 +58,7 @@ fun AppDrawer(
                 colors = NavigationDrawerItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.onPrimary,
                     selectedTextColor = MaterialTheme.colorScheme.onPrimary,
-                    selectedContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.8f)
+                    selectedContainerColor = MaterialTheme.colorScheme.primary
                 ),
                 modifier = Modifier
                     .padding(horizontal = 16.dp, vertical = 4.dp)
@@ -63,7 +66,5 @@ fun AppDrawer(
             )
 
         }
-
     }
-
 }

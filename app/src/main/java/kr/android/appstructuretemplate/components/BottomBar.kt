@@ -17,7 +17,8 @@ fun BottomBar(
     onItemClicked : (String) -> Unit
 ){
     NavigationBar(
-
+        containerColor = MaterialTheme.colorScheme.primaryContainer,
+        contentColor = MaterialTheme.colorScheme.onSurface
     ) {
         bottomBarItems.forEach {item ->
 
@@ -28,14 +29,15 @@ fun BottomBar(
                 label = { Text(item.title, fontSize = 20.sp, fontWeight = FontWeight.SemiBold) },
                 icon = {
                     Icon(
-                        painter = painterResource(item.icon),
+                        painter = painterResource(item.bIcon),
                         contentDescription = item.title,
                         modifier = Modifier.size(35.dp)
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.primary,
-                    selectedTextColor = MaterialTheme.colorScheme.primary
+                    selectedTextColor = MaterialTheme.colorScheme.primary,
+                    indicatorColor = MaterialTheme.colorScheme.inversePrimary
                 ),
                 modifier = Modifier
                     .padding(horizontal = 12.dp, vertical = 8.dp)

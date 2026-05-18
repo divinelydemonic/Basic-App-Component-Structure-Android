@@ -31,7 +31,7 @@ fun DrawerItem1(
             Text(
                 text = "Drawer Item 1",
                 color = MaterialTheme.colorScheme.secondary,
-                fontSize = 45.sp,
+                fontSize = 40.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.rotate(-45f)
             )
