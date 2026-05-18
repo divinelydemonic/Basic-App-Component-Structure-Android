@@ -8,7 +8,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
+import kr.android.appstructuretemplate.bottombar_screens.BBItem1
 import kr.android.appstructuretemplate.ui.theme.AppStructureTemplateTheme
 
 class MainActivity : ComponentActivity() {
@@ -17,6 +19,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
+            val viewModel : ViewModel = viewModel()
             val navController = rememberNavController()
 
             AppStructureTemplateTheme {
