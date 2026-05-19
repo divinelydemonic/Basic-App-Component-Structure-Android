@@ -7,17 +7,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AddAlert
-import androidx.compose.material.icons.filled.Warning
-import androidx.compose.material3.AlertDialog
-import androidx.compose.material3.DrawerValue
-import androidx.compose.material3.FloatingActionButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.ModalNavigationDrawer
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
-import androidx.compose.material3.rememberDrawerState
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -27,7 +17,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.lifecycle.ViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import kotlinx.coroutines.launch
@@ -36,7 +25,6 @@ import kr.android.appstructuretemplate.components.BottomBar
 import kr.android.appstructuretemplate.components.BottomSheet
 import kr.android.appstructuretemplate.components.TopBar
 import kr.android.appstructuretemplate.navigation.AppNavigation
-import kr.android.appstructuretemplate.navigation.Screens
 import kr.android.appstructuretemplate.navigation.allScreens
 
 @Composable
@@ -58,15 +46,13 @@ fun MainView(
         ?.title ?: "App"
 
     val icon = allScreens
-        .find {
-            it.route == currentRoute
-        }
+        .find { it.route == currentRoute }
         ?.icon
 
-    val drawerState = rememberDrawerState(DrawerValue.Closed)
-    val showBottomSheet = remember { mutableStateOf(false) }
-    val scope = rememberCoroutineScope()
 
+    val drawerState = rememberDrawerState(DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+    val showBottomSheet = remember { mutableStateOf(false) }
     val showDialog = remember { mutableStateOf(false) }
 
 

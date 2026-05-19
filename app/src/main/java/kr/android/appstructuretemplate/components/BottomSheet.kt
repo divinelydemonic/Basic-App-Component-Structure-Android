@@ -64,7 +64,7 @@ fun BottomSheet(
                 ListItem(
                     leadingContent = {
                         Icon(
-                            painter = painterResource(item.bBIcon),
+                            painter = painterResource(item.bsIcon),
                             contentDescription = item.title,
                             modifier = Modifier
                                 .size(30.dp)

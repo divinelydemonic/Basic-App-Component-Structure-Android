@@ -26,41 +26,23 @@ fun AppNavigation(
         startDestination = Screens.BottomBar.BBItem1.route
     ){
 
-        composable(Screens.BottomBar.BBItem1.route){
-            BBItem1()
-        }
+        composable(Screens.BottomBar.BBItem1.route){ BBItem1() }
 
-        composable(Screens.BottomBar.BBItem2.route){
-            BBItem2()
-        }
+        composable(Screens.BottomBar.BBItem2.route){ BBItem2() }
 
-        composable(Screens.BottomBar.BBItem3.route){
-            BBItem3()
-        }
+        composable(Screens.BottomBar.BBItem3.route){ BBItem3() }
 
-        composable(Screens.AppDrawer.DrawerItem1.route){
-            DrawerItem1()
-        }
+        composable(Screens.AppDrawer.DrawerItem1.route){ DrawerItem1() }
 
-        composable(Screens.AppDrawer.DrawerItem2.route){
-            DrawerItem2()
-        }
+        composable(Screens.AppDrawer.DrawerItem2.route){ DrawerItem2() }
 
-        composable(Screens.AppDrawer.DrawerItem3.route){
-            DrawerItem3()
-        }
+        composable(Screens.AppDrawer.DrawerItem3.route){ DrawerItem3() }
 
-        composable(Screens.BottomSheet.BSItem1.route){
-            BSItem1()
-        }
+        composable(Screens.BottomSheet.BSItem1.route){ BSItem1() }
 
-        composable(Screens.BottomSheet.BSItem2.route){
-            BSItem2()
-        }
+        composable(Screens.BottomSheet.BSItem2.route){ BSItem2() }
 
-        composable(Screens.BottomSheet.BSItem3.route){
-            BSItem3()
-        }
+        composable(Screens.BottomSheet.BSItem3.route){ BSItem3() }
 
     }
 

@@ -26,7 +26,13 @@ fun BottomBar(
                 selected = currentRoute == item.route,
                 onClick = { onItemClicked(item.route) },
                 alwaysShowLabel = false,
-                label = { Text(item.title, fontSize = 20.sp, fontWeight = FontWeight.SemiBold) },
+                label = {
+                    Text(
+                        item.title,
+                        fontSize = 20.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
+                },
                 icon = {
                     Icon(
                         painter = painterResource(item.bIcon),

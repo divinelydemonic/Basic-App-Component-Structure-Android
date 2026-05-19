@@ -64,25 +64,25 @@ sealed class Screens(
     sealed class BottomSheet(
         val bsTitle : String,
         val bsRoute : String,
-        @DrawableRes val bBIcon : Int
-    ) : Screens(bsTitle, bsRoute, bBIcon) {
+        @DrawableRes val bsIcon : Int
+    ) : Screens(bsTitle, bsRoute, bsIcon) {
 
         object BSItem1 : BottomSheet(
             bsTitle = "BS Item 1",
             bsRoute = "bSItem1",
-            bBIcon = R.drawable.item_1
+            bsIcon = R.drawable.item_1
         )
 
         object BSItem2 : BottomSheet(
             bsTitle = "BS Item 2",
             bsRoute = "bSItem2",
-            bBIcon = R.drawable.item_2
+            bsIcon = R.drawable.item_2
         )
 
         object BSItem3 : BottomSheet(
             bsTitle = "BS Item 3",
             bsRoute = "bSItem3",
-            bBIcon = R.drawable.item_3
+            bsIcon = R.drawable.item_3
         )
 
     }
