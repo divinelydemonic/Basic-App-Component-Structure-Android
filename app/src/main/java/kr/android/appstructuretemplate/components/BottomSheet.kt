@@ -103,8 +103,8 @@ fun BottomSheet(
                 if (index != bottomSheetItems.lastIndex) {
                     HorizontalDivider(
                         modifier = Modifier.padding(horizontal = 16.dp),
-                        thickness = 1.dp,
-                        color = MaterialTheme.colorScheme.outlineVariant
+                        thickness = 2.dp,
+                        color = MaterialTheme.colorScheme.inversePrimary
                     )
                 }
 
