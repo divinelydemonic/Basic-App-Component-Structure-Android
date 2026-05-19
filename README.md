@@ -167,6 +167,12 @@ BS Item 3 → Bottom Sheet icon + title
 
 ---
 
+## 📱 Demo
+
+https://github.com/user-attachments/assets/a04c3b47-55e3-47c5-9baf-8025f295e601
+
+---
+
 ## 🚀 Purpose of this Project
 
 This template was created for:
